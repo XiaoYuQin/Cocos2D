@@ -14,7 +14,15 @@ public class CCMoveTo extends CCIntervalAction {
     private CGPoint startPosition;
     protected CGPoint delta;
 
-    /** creates the action */
+    /** creates the action 
+     * 用持续时间和二维世界目标位置创建MoveTo动作。
+     * 
+     * 		参数
+     * 		duration	持续时间，以秒为单位。
+     * 		position	二维世界的目标位置。
+     * 		返回
+     * 		一个自释放的MoveTo对象。
+     * */
     public static CCMoveTo action(float t, CGPoint pos) {
         return new CCMoveTo(t, pos);
     }

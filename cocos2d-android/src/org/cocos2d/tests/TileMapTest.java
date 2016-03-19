@@ -42,6 +42,7 @@ import org.cocos2d.types.ccGridSize;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
@@ -55,7 +56,11 @@ public class TileMapTest extends Activity {
     public static final String LOG_TAG = TileMapTest.class.getSimpleName();
     private CCGLSurfaceView mGLSurfaceView;
 
-
+    private static void debug(String str){
+    	Log.i("TileMapTest",str);
+    }
+    
+    
     @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -118,20 +123,16 @@ public class TileMapTest extends Activity {
 
     static int sceneIdx = -1;
     static Class<?> transitions[] = {
-        TMXIsoZorder.class,
+        TMXIsoZorder.class,				
         TMXOrthoZorder.class,
         TMXIsoVertexZ.class,
-        TMXOrthoVertexZ.class,
         TMXOrthoTest.class,
-        TMXOrthoTest2.class,
         TMXOrthoTest3.class,
         TMXOrthoTest4.class,
         TMXIsoTest.class,
         TMXIsoTest1.class,
         TMXIsoTest2.class,
-        TMXUncompressedTest.class,
         TMXHexTest.class,
-        TMXReadWriteTest.class,
         TMXTilesetTest.class,
         TMXOrthoObjectsTest.class,
         TMXIsoObjectsTest.class,
@@ -139,9 +140,12 @@ public class TileMapTest extends Activity {
         TMXResizeTest.class,
         TMXIsoMoveLayer.class,
         TMXOrthoMoveLayer.class,
-
         TileMapTest1.class,
         TileMapEditTest.class,
+        TMXOrthoVertexZ.class,
+        TMXOrthoTest2.class,
+        TMXUncompressedTest.class,
+        TMXReadWriteTest.class,
     };
 
     static CCLayer nextAction() {
@@ -160,6 +164,9 @@ public class TileMapTest extends Activity {
     }
 
     static CCLayer restartAction() {
+    	
+    	Log.i("TileMapTest","sceneIdx = "+sceneIdx);
+    	
         Class<?> c = transitions[sceneIdx];
         try {
             return (CCLayer) c.newInstance();
@@ -657,10 +664,10 @@ public class TileMapTest extends Activity {
             addChild(map, 0, kTagTileMap);
 
             // move map to the center of the screen
-            CGSize ms = map.getMapSize();
-            CGSize ts = map.getTileSize();
-            map.runAction(CCMoveTo.action(1.0f,
-                            CGPoint.ccp(-ms.width * ts.width/2, -ms.height * ts.height/2)));
+//            CGSize ms = map.getMapSize();
+//            CGSize ts = map.getTileSize();
+//            map.runAction(CCMoveTo.action(1.0f,
+//                            CGPoint.ccp(-ms.width * ts.width/2, -ms.height * ts.height/2)));
         }
 
         public String title() {
@@ -878,8 +885,9 @@ public class TileMapTest extends Activity {
     }
 
     static class TMXResizeTest extends TileDemo {
-        public TMXResizeTest() {
+        public TMXResizeTest() {        	
             super();
+            debug("TMXResizeTest");
 
             CCTMXTiledMap map = CCTMXTiledMap.tiledMap("orthogonal-test5.tmx");
             addChild(map, 0, kTagTileMap);
@@ -1072,7 +1080,7 @@ public class TileMapTest extends Activity {
 
         public TMXOrthoVertexZ() {
             super();
-
+            debug("TMXOrthoVertexZ");
             CCTMXTiledMap map = CCTMXTiledMap.tiledMap("orthogonal-test-vertexz.tmx");
             addChild(map, 0, kTagTileMap);
 
@@ -1090,9 +1098,11 @@ public class TileMapTest extends Activity {
             tamara.runAction(CCRepeatForever.action(seq));
 
             schedule("repositionSprite");
+            debug("TMXOrthoVertexZ end");
         }
 
         public void repositionSprite(float dt) {
+        	debug("repositionSprite");
             // tile height is 101x81
             // map size: 12x12
             CGPoint p = tamara.getPosition();
@@ -1101,7 +1111,7 @@ public class TileMapTest extends Activity {
 
         public void onEnter() {
             super.onEnter();
-
+            debug("onEnter");
             // TIP: 2d projection should be used
             CCDirector.sharedDirector().setProjection(CCDirector.kCCDirectorProjection2D);
         }
@@ -1109,6 +1119,7 @@ public class TileMapTest extends Activity {
         public void onExit() {
             // At exit use any other projection.
             //	[[CCDirector sharedDirector] setProjection:kCCDirectorProjection3D];
+        	debug("onExit");
             super.onExit();
         }
 
@@ -1124,7 +1135,7 @@ public class TileMapTest extends Activity {
     static class TMXIsoMoveLayer extends TileDemo {
         public TMXIsoMoveLayer() {
             super();
-
+            debug("TMXIsoMoveLayer");
             CCTMXTiledMap map = CCTMXTiledMap.tiledMap("iso-test-movelayer.tmx");
             addChild(map, 0, kTagTileMap);
 
@@ -1147,7 +1158,7 @@ public class TileMapTest extends Activity {
     static class TMXOrthoMoveLayer extends TileDemo {
         public TMXOrthoMoveLayer() {
             super();
-
+            debug("TMXOrthoMoveLayer");
             CCTMXTiledMap map = CCTMXTiledMap.tiledMap("orthogonal-test-movelayer.tmx");
             addChild(map, 0, kTagTileMap);
 

@@ -32,7 +32,7 @@ public class CCMoveBy extends CCMoveTo {
         super.start(aTarget);
         delta.set(tmpx, tmpy);
     }
-
+    
     @Override
     public CCMoveBy reverse() {
         return new CCMoveBy(duration, CGPoint.ccpNeg(delta));

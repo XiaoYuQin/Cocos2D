@@ -62,6 +62,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -75,8 +76,14 @@ public class ActionsTest extends Activity {
 
 	private CCGLSurfaceView mGLSurfaceView;
 
+	private static void debug(String str){
+		Log.i("CCGLSurfaceView",str);
+	}
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		debug("onCreate");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -95,7 +102,7 @@ public class ActionsTest extends Activity {
 		CCDirector.sharedDirector().setDisplayFPS(true);
 
 		// frames per second
-		CCDirector.sharedDirector().setAnimationInterval(1.0f / 30);
+		CCDirector.sharedDirector().setAnimationInterval(1.0f / 50);
 
 		CCScene scene = CCScene.node();
 		scene.addChild(nextAction());
@@ -136,11 +143,13 @@ public class ActionsTest extends Activity {
 
 	@Override
 	public void onStart() {
+		debug("onStart");
 		super.onStart();
 	}
 
 	@Override
 	public void onPause() {
+		debug("onPause");
 		super.onPause();
 
 		CCDirector.sharedDirector().onPause();
@@ -148,6 +157,7 @@ public class ActionsTest extends Activity {
 
 	@Override
 	public void onResume() {
+		debug("onResume");
 		super.onResume();
 
 		CCDirector.sharedDirector().onResume();
@@ -155,6 +165,7 @@ public class ActionsTest extends Activity {
 
 	@Override
 	public void onDestroy() {
+		debug("onDestroy");
 		super.onDestroy();
 
 		CCDirector.sharedDirector().end();
@@ -165,7 +176,7 @@ public class ActionsTest extends Activity {
 	// Actions here
 	// 
 	static CCLayer nextAction() {
-
+		debug("nextAction = "+sceneIdx);
 		sceneIdx++;
 		sceneIdx = sceneIdx % transitions.length;
 
@@ -173,6 +184,7 @@ public class ActionsTest extends Activity {
 	}
 
 	static CCLayer backAction() {
+		debug("backAction = "+sceneIdx);
 		sceneIdx--;
 		int total = transitions.length;
 		if (sceneIdx < 0)
@@ -182,6 +194,7 @@ public class ActionsTest extends Activity {
 
 	static CCLayer restartAction() {
 		try {
+			debug("restartAction = "+sceneIdx);
 			Class<?> c = transitions[sceneIdx];
 			return (CCLayer) c.newInstance();
 		} catch (Exception e) {
@@ -203,6 +216,7 @@ public class ActionsTest extends Activity {
 			Bitmap bmp = null;
 			InputStream is;
 			try {
+				debug("activity package name = "+CCDirector.theApp.getAssets().toString());
 				is = CCDirector.theApp.getAssets().open("grossini.png");
 				bmp = BitmapFactory.decodeStream(is);
 				is.close();
@@ -215,6 +229,7 @@ public class ActionsTest extends Activity {
 			final Bitmap bmpCopy = bmp.copy(bmp.getConfig(), false);
 			bmp.recycle();
 			
+			/*创建一个精灵*/
 			CCTexture2D tex = new CCTexture2D();
 			tex.setLoader(new GLResourceHelper.GLResourceLoader() {
 				@Override
@@ -244,6 +259,10 @@ public class ActionsTest extends Activity {
 
 			CGSize s = CCDirector.sharedDirector().winSize();
 
+			debug("grossini'location = "+s.width/2+"  "+s.height/3);
+			debug("grossini'location = "+s.width/2+"  "+2*s.height/3);
+			debug("grossini'location = "+s.width/2+"  "+s.height/2);
+			
 			grossini.setPosition(CGPoint.ccp(s.width/2, s.height/3));
 			tamara.setPosition(CGPoint.ccp(s.width/2, 2*s.height/3));
 			kathia.setPosition(CGPoint.ccp(s.width/2, s.height/2));
@@ -364,7 +383,7 @@ public class ActionsTest extends Activity {
 		}
 	}
 
-
+	/*移动运动*/
 	static class ActionMove extends ActionDemo {
 		public void onEnter() {
 			super.onEnter();
@@ -375,11 +394,13 @@ public class ActionsTest extends Activity {
 
 
 			CCMoveTo actionTo = CCMoveTo.action(2, CGPoint.ccp(s.width-40, s.height-40));
-
+			/*描述一个路径*/
 			CCMoveBy actionBy = CCMoveBy.action(2, CGPoint.ccp(80,80));
-			CCMoveBy actionByBack = actionBy.reverse();
+			//CCMoveBy actionByBack = actionBy.reverse();
+			CCMoveBy actionByBack = CCMoveBy.action(2, CGPoint.ccp(200,200));
 
 			tamara.runAction(actionTo);
+			
 			grossini.runAction(CCSequence.actions(actionBy, actionByBack));
 			kathia.runAction(CCMoveTo.action(1, CGPoint.ccp(40,40)));
 		}
@@ -566,11 +587,12 @@ public class ActionsTest extends Activity {
 
 			centerSprites(1);
 
-			CCAnimation animation = CCAnimation.animation("dance");
+			//CCAnimation animation = CCAnimation.animation("dance");
+			CCAnimation animation = CCAnimation.animation("dances");
 			for( int i=1;i<15;i++)
 				animation.addFrame(String.format("grossini_dance_%02d.png", i));
 
-			CCAnimate action = CCAnimate.action(3, animation, false);
+			CCAnimate action = CCAnimate.action(30, animation, false);
 			CCAnimate action_back = action.reverse();
 
 			grossini.runAction(CCSequence.actions(action, action_back));
