@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name"> Cocos2D </string>
     <string name="activity_actionmanagertest"> Action Manager Test </string>
     <string name="activity_actionstest"> Actions Test </string>
@@ -17,12 +18,14 @@
     <string name="activity_particletest"> Particle Test </string>
     <string name="activity_schedulertest"> Scheduler Test </string>
     <string name="activity_tilemaptest"> Tile Map Test </string>
-        
     <string name="activity_scenetest"> Scene Test </string>
     <string name="activity_soundenginetest"> SoundEngine Test </string>
     <string name="activity_spritestest"> Sprites Test </string>
     <string name="activity_transitionstest"> Transitions Test </string>
     <string name="activity_rotateworldtest"> Rotate World Test </string>
     <string name="activity_parallaxtest"> Parallax Test </string>
-    
+    <string name="title_activity_demo_simple_map1">DemoSimpleMap1</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

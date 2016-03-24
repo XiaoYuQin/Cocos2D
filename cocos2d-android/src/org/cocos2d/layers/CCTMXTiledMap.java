@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.ListIterator;
 
 import org.cocos2d.config.ccMacros;
+import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.nodes.CCNode;
 import org.cocos2d.types.CGSize;
 import org.cocos2d.utils.CCFormatter;
@@ -246,6 +247,51 @@ public class CCTMXTiledMap extends CCNode {
 		// If all the tiles are 0, return empty tileset
 		ccMacros.CCLOG(LOG_TAG, "cocos2d: Warning: TMX Layer '" + layerInfo.name + "' has no tiles");
 		return tileset;
+	}
+	
+	/*********************************************** 秦晓宇添加 ******************************************************/
+	/**设置瓦片地图在屏幕中心**/
+	public void setPositionScreenCenter(){
+		CGSize s = CCDirector.sharedDirector().winSize();
+		float x = s.getWidth()/2-this.getTileSize().getWidth()*this.getMapSize().getWidth()*scaleX_/2;
+		float y = s.getHeight()/2-this.getTileSize().getHeight()*this.getMapSize().getHeight()*scaleX_/2;
+		this.setPosition(x,y);		
+	}
+	/**设置在某瓦片右上方**/
+	public void setPositionRightAbove(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x+this.getTileSize().width*this.getMapSize().width*scaleX_/2 
+				, map.getPosition().y+this.getTileSize().height *this.getMapSize().height*scaleX_/2);
+	}
+	/**设置在某瓦片右下方**/
+	public void setPositionRightBelow(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x+this.getTileSize().width*this.getMapSize().width*scaleX_/2 
+				, map.getPosition().y- this.getTileSize().height *this.getMapSize().height*scaleX_/2);
+	}
+	/**设置在某瓦片左上方**/
+	public void setPositionLeftAbove(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x - this.getTileSize().width*this.getMapSize().width*scaleX_/2 
+				, map.getPosition().y + this.getTileSize().height *this.getMapSize().height*scaleX_/2);
+	}
+	/**设置在某瓦片左下方**/
+	public void setPositionLeftBelow(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x - this.getTileSize().width*this.getMapSize().width*scaleX_/2 
+				, map.getPosition().y - this.getTileSize().height *this.getMapSize().height*scaleX_/2);
+	}
+	/**设置在某瓦片上方**/
+	public void setPositionAbove(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x  , map.getPosition().y + this.getTileSize().height *this.getMapSize().height*scaleX_);
+	}
+	/**设置在某瓦片下方**/
+	public void setPositionBelow(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x  , map.getPosition().y - this.getTileSize().height *this.getMapSize().height*scaleX_);
+	}
+	/**设置在某瓦片左方**/
+	public void setPositionLeft(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x - this.getTileSize().width*this.getMapSize().width*scaleX_ , map.getPosition().y);
+	}
+	/**设置在某瓦片右方**/
+	public void setPositionRight(CCTMXTiledMap map){
+		this.setPosition(map.getPosition().x + this.getTileSize().width*this.getMapSize().width*scaleX_ , map.getPosition().y);
 	}
 
 }
