@@ -7,6 +7,8 @@ import java.util.ListIterator;
 import org.cocos2d.config.ccMacros;
 import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.nodes.CCNode;
+import org.cocos2d.types.CGPoint;
+import org.cocos2d.types.CGRect;
 import org.cocos2d.types.CGSize;
 import org.cocos2d.utils.CCFormatter;
 
@@ -294,4 +296,44 @@ public class CCTMXTiledMap extends CCNode {
 		this.setPosition(map.getPosition().x + this.getTileSize().width*this.getMapSize().width*scaleX_ , map.getPosition().y);
 	}
 
+	/**判断某个点是否在当前瓦片地图的范围内*/
+	public void isInRange(CGPoint point){
+		
+	}
+	/**获得2.5D瓦片地图的左侧图片坐标*/
+	public CGPoint get45LeftPoint(){
+		CGPoint point = new CGPoint();
+		point.x = this.getPosition().x;
+		point.y = this.getPosition().y+this.getTileSize().height*this.getMapSize().height*scaleY_/2;	
+		return point;
+	}
+	/**获得2.5D瓦片地图的下侧图片坐标*/	
+	public CGPoint get45BelowPoint(){
+		CGPoint point = new CGPoint();
+		point.x = this.getPosition().x+this.getTileSize().width*this.getMapSize().width*scaleX_/2;
+		point.y = this.getPosition().y;	
+		return point;
+	}
+	/**获得2.5D瓦片地图所处的范围*/	
+	
+	public CGRect getRect(){
+		CGRect rect = new CGRect();
+		rect.set(
+				this.getPosition().x,
+				this.getPosition().y,
+				this.getPosition().x+this.getTileSize().width*this.getMapSize().width*scaleX_,
+				this.getPosition().y+this.getTileSize().height*this.getMapSize().height*scaleY_);
+		return rect;
+	}
+	/**当前瓦片是否已经加入到图层的标志位*/
+	protected boolean inChildFlag = false;
+	/**判断当前瓦片是否已经加入到图层*/
+	public boolean IsInChild(){		
+		return inChildFlag;
+	}
+	/**设置当前瓦片是否已经加入到图层*/
+	public void setInChildFlag(boolean flag){
+		inChildFlag = flag;
+	}
+	
 }

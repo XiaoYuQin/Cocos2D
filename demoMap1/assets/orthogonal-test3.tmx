@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
- <tileset name="Desert" firstgid="1" tilewidth="32" tileheight="32" spacing="1" margin="1">
-  <image source="tmw_desert_spacing.png"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="28" height="12" tilewidth="64" tileheight="64" nextobjectid="1">
+ <tileset firstgid="1" name="Desert" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
- <!-- Layer data is compressed (GZip) binary data, encoded in Base64 -->
- <layer name="Layer 0" width="32" height="32">
+ <tileset firstgid="49" name="1" tilewidth="64" tileheight="64" tilecount="336" columns="28">
+  <image source="bugs/1.png" trans="ff00ff" width="1806" height="829"/>
+ </tileset>
+ <layer name="Layer 0" width="28" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAO3TTQ+CMAwG4KIn8aSelIRE4IIf/P+fZ5dsoTQlqXPlYHp4krFA361sAwA8lJ6oLSzUnAzq5qrQTrA3ymvY8wHVgqNRfp+Zf0W3uP40pvi+SuffURe/T2OK19Xmn9BZcGHvjTDfiTTOuSvadXK0/5r5Nbl3mvZfM1/aWg79L1bZocfvmP+C5Zn/tv+/7F0681v0P2QMIJ/5Lfo/Gtd3zjnnnPtnH/8uAvwAEAAA
+   H4sIAAAAAAAACw3DB5gOBAAA0F+IRELag6JIpTvjzp0b9rhh7+04d9y54RZuVTaFirJC9spORRkNexTtYRTRsqPJ+773ggKBQLD1rG8DGxpiqI0MM9zGRhhplNE2sanNbG4LW9rK1raxrTHGGme87WxvBzvayc52savd7G4Pe9rL3vaxr/3s7wAHmuAgB5voEJNMdqjDTDHV4aaZboaZjjDLbHPMNc+RjnK0+RZYaJHFPufzvuAYxzrO8U5wopOc7BRf9CWnOs3pvuwrvuoMZ/qarzvL2c5xrvN8w/kucKFvusjFLnGpy1zuCle6ytWu8S3Xus71bnCjm9zs227xHd/1Pbe6zff9wO3ucKe7/NCP/NhP3O0e97rP/R7woIc87BE/9TOPeszP/cIv/cqv/cZv/c7v/cHjnvCkp/zRnzztGX/2rOf8xV/9zd/9w/Ne8KKXvOwVr/qn17zuX/7tP/7rf/7vDQMl8BZLWsrS3moZy3qb5bzd8lbwDit6p5WsbBXvsqp3e4/3ep/3+4AP+pAP+4jVrO6jPmYNa/q4T1jL2j5pHZ/yaZ+xrs8aZLD1rG8DGxpiqI0MM9zGRhhplNE2sanNbG4LW9rK1raxrTHGGme87WxvBzvayc52savd7G4Pe9rL3vaxr/3s7wAHmuAgB5voEJNMdqjDTDHV4aaZboaZjjDLbHPMNc+RjnK0+RZYaJHF3gSeAvDYQAUAAA==
   </data>
  </layer>
 </map>

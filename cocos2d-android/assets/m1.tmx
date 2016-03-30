@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Desert" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="48" columns="8">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="bug886" tilewidth="32" tileheight="32" tilecount="96" columns="12">
+  <image source="bugs/bug886.jpg" width="384" height="256"/>
+ </tileset>
+ <tileset firstgid="145" name="1" tilewidth="32" tileheight="32" tilecount="1400" columns="56">
+  <image source="bugs/1.png" trans="ff00ff" width="1806" height="829"/>
+ </tileset>
+ <layer name="Layer 0" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WR07DQBhA4UlCS1gBK0BCArIJbU8vd6AtaUtK6AmwpC3p5Qb0cgt6uQG9nIJnyRbGciJjPCMhWHyS4yT/G09sKWEhRIlDpSjwmDazQsJct3zw2whI6uVbXgcRspEpqV/ssp+LPH39xrGZ9bq87heiSP++cWxmneu0n4VsGzmWz0XE5zNhHLt5Vpyu08q8/07OJ5JsnSLJe+b9d3Lea4k65t9FVlvb43K9Xya+3vPf3f+fXLvdPa9i/7VGWNjf8yr2PyJ5/m/SjBa0og3tivsd6EQXutGjuN+LPvRjAFHF/RjimMAkphT3pzGDWcxhXnHfSwtYxBKWsYJVrGEdG9iU2D/BKc5wjgtc4grXuMGtxL6PP59+BJCCVKQhHRkIIuST169kdhWqUYNa1KEeDWhEk8R+lNmDGMIwRjCKMYwjhrjE/hazt7GDXexhHwc4xBGOJfbvmH2PBzziCc94wSve8C6x/+/v+QAwQU4cABAAAA==
+  </data>
+ </layer>
+</map>

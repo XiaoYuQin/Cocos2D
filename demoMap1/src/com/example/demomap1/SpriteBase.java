@@ -20,7 +20,7 @@ public class SpriteBase extends CCLayer {
 	            
 	            CGSize s = CCDirector.sharedDirector().winSize();
 
-	            grossini = CCSprite.sprite("grossini.png");
+	            grossini = CCSprite.sprite("1.png");
 	            tamara = CCSprite.sprite("grossinis_sister1.png");
 
 	            addChild(grossini, 1);

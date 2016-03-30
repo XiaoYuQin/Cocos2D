@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="12" height="12" tilewidth="101" tileheight="81">
- <tileset firstgid="1" name="Untitled" tilewidth="101" tileheight="171" spacing="2" margin="2">
-  <image source="ortho-test1.png"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="101" tileheight="81" nextobjectid="1">
+ <tileset firstgid="1" name="Untitled" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
+  <image source="ortho-test1.png" width="1024" height="1024"/>
  </tileset>
- <tileset firstgid="46" name="tileset2" tilewidth="101" tileheight="171" spacing="2" margin="2">
-  <image source="ortho-test1_bw.png"/>
+ <tileset firstgid="46" name="tileset2" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
+  <image source="ortho-test1_bw.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="91" name="1" tilewidth="101" tileheight="81" tilecount="170" columns="17">
+  <image source="bugs/1.png" trans="ff00ff" width="1806" height="829"/>
  </tileset>
  <layer name="Layer 0" width="12" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAX4AB8Q8wOxAJSvRIJeZiBmAmIWIGYFYjYS9AoBsTAQawCxKhCrQMVVkbAgEGsDsQQQiwCxKFQ9F4nqKTEfAM9UTSZAAgAA
-  </data>
- </layer>
- <layer name="Layer 1" width="12" height="12">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXUBNZAbAPEtmToNQBifSA2BGIjIDYmQa89GfbhMgcd4wMA7a2boEACAAA=
-  </data>
- </layer>
- <layer name="Layer 2" width="12" height="12">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAUDCfiAmB+IBcjQywzETEDMAsSsQMxGgl4hMuzDBgAgyUssQAIAAA==
+   H4sIAAAAAAAAC5XDJVZEAQAAwH9PXBOuCdeEa8I1weKQcE24JlwT7nOFnfcmCMITYaRRRhtjrHHGm2CiSSabYqppppthpllmm2OueeZbYKFFFltiqWWWW2GlVVZbY6111ttgo00222KrbbbbYadddttjr332O+CgQw474qghxxx3wkmnnHbGWeecd8FFl1x2xVXXXHfDTbfcdsdd99z3wEOPPPbEU88898JLr7z2xlvvvPfBR5989sVX33z3w0+//PbHX/+C8P0DQlGVHEACAAA=
   </data>
  </layer>
 </map>

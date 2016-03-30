@@ -3,9 +3,12 @@
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" spacing="2" margin="2" tilecount="198" columns="18">
   <image source="fixed-ortho-test2.png" width="640" height="400"/>
  </tileset>
+ <tileset firstgid="199" name="未标题-1" tilewidth="32" tileheight="32" tilecount="21762" columns="702">
+  <image source="../../../../未标题-1.png" trans="ff00ff" width="22465" height="1000"/>
+ </tileset>
  <layer name="Layer 0" width="32" height="32">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3FwQoAEBAA0ZXNV7n5/3/isFKbC0XSvJpGBAAAAADeFVvZ3tulrtuKC0Oa9Juw0AkVOv/YQAAQAAA=
+  <data encoding="base64" compression="zlib">
+   eJzt0d0KQEAUxPHR6jyVu8Wb+Xgzy1MZRWpToqxifvXvXM7FAUREREREzg0ssJFNL+w3DmhZx3qXft8bULKK1ZZ+/8+Wdxfr3borj0rNR8nODvqa7EJPmAHSBggA
   </data>
  </layer>
  <objectgroup color="#ffffff" name="Object Group 1">

@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
-<map version="1.0" orientation="orthogonal" width="12" height="12" tilewidth="101" tileheight="81">
- <tileset name="Untitled" firstgid="1" tilewidth="101" tileheight="171" spacing="2" margin="2">
-  <image source="ortho-test1.png"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="17" height="10" tilewidth="101" tileheight="81" nextobjectid="1">
+ <tileset firstgid="1" name="1" tilewidth="101" tileheight="81" tilecount="170" columns="17">
+  <image source="bugs/1.png" trans="ff00ff" width="1806" height="829"/>
  </tileset>
- <layer name="grass" width="12" height="12">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAGNgGFlAlQg82NQPZgwAVOGiDUACAAA=
-  </data>
- </layer>
- <layer name="trees4" width="12" height="12">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAGNgGAXUAMJk6lNDw0MNAADqJH5uQAIAAA==
-  </data>
- </layer>
- <layer name="trees3" width="12" height="12" x="8" y="-1">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAGNgGAVDCWig4YEGAAKbrPtAAgAA
-  </data>
- </layer>
- <layer name="trees2" width="12" height="12" x="4" y="-2">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAGNgGAXDGaijYWoDALxzd45AAgAA
+ <layer name="layer1" width="17" height="10">
+  <data encoding="base64">
+   AQAAAAIAAAADAAAABAAAAAUAAAAGAAAABwAAAAgAAAAJAAAACgAAAAsAAAAMAAAADQAAAA4AAAAPAAAAEAAAABEAAAASAAAAEwAAABQAAAAVAAAAFgAAABcAAAAYAAAAGQAAABoAAAAbAAAAHAAAAB0AAAAeAAAAHwAAACAAAAAhAAAAIgAAACMAAAAkAAAAJQAAACYAAAAnAAAAKAAAACkAAAAqAAAAKwAAACwAAAAtAAAALgAAAC8AAAAwAAAAMQAAADIAAAAzAAAANAAAADUAAAA2AAAANwAAADgAAAA5AAAAOgAAADsAAAA8AAAAPQAAAD4AAAA/AAAAQAAAAEEAAABCAAAAQwAAAEQAAABFAAAARgAAAEcAAABIAAAASQAAAEoAAABLAAAATAAAAE0AAABOAAAATwAAAFAAAABRAAAAUgAAAFMAAABUAAAAVQAAAFYAAABXAAAAWAAAAFkAAABaAAAAWwAAAFwAAABdAAAAXgAAAF8AAABgAAAAYQAAAGIAAABjAAAAZAAAAGUAAABmAAAAZwAAAGgAAABpAAAAagAAAGsAAABsAAAAbQAAAG4AAABvAAAAcAAAAHEAAAByAAAAcwAAAHQAAAB1AAAAdgAAAHcAAAB4AAAAeQAAAHoAAAB7AAAAfAAAAH0AAAB+AAAAfwAAAIAAAACBAAAAggAAAIMAAACEAAAAhQAAAIYAAACHAAAAiAAAAIkAAACKAAAAiwAAAIwAAACNAAAAjgAAAI8AAACQAAAAkQAAAJIAAACTAAAAlAAAAJUAAACWAAAAlwAAAJgAAACZAAAAmgAAAJsAAACcAAAAnQAAAJ4AAACfAAAAoAAAAKEAAACiAAAAowAAAKQAAAClAAAApgAAAKcAAACoAAAAqQAAAKoAAAA=
   </data>
  </layer>
 </map>
