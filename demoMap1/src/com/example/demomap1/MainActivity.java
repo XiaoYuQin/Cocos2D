@@ -1,8 +1,10 @@
 package com.example.demomap1;
 
 import org.cocos2d.layers.CCScene;
+import org.cocos2d.layers.CCTMXTiledMap;
 import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.opengl.CCGLSurfaceView;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,15 +58,19 @@ public class MainActivity extends Activity {
 
             scene = CCScene.node();  
             
-            tMXIsoZorder = new TMXIsoZorder();
-            scene.addChild(tMXIsoZorder);
+            
+//            TestAddTwoTileMap_1 testAddTwoTileMap_1 = new TestAddTwoTileMap_1(scene);
+//            TestTileMapThreadRefash_2 testTileMapThreadRefash_2 = new TestTileMapThreadRefash_2(scene);
+            TestWindowDrawRect_3 testWindowDrawRect_3 = new TestWindowDrawRect_3(scene);
+            
+//            tMXIsoZorder = new TMXIsoZorder();
+//            scene.addChild(tMXIsoZorder);
+            
             
 //            SpriteBase spriteBase = new SpriteBase();
 //            scene.addChild(spriteBase);
             
 //            CCTMXTiledMap map1 = CCTMXTiledMap.tiledMap("orthogonal-test-movelayer.tmx");
-//    		
-//    		
 //    		debug("CCTMXTiledMap");
 //    		scene.addChild(map1,0);
 //    		map1.setPositionScreenCenter();
@@ -149,5 +155,18 @@ public class MainActivity extends Activity {
             CCDirector.sharedDirector().end();
         }
 
+    
+    public class MapThread extends Thread{
+
+		@Override
+        public void run()
+        {
+	        // TODO Auto-generated method stub
+	        super.run();
+        }
+    	
+    }
+    
+    
 
 }

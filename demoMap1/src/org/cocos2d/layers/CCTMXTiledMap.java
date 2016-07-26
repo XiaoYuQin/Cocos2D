@@ -227,14 +227,13 @@ public class CCTMXTiledMap extends CCNode {
 		CGSize size = layerInfo.layerSize;
 
 		ListIterator<CCTMXTilesetInfo> iter = mapInfo.tilesets.listIterator(mapInfo.tilesets.size());
-		Log.i("CCTMXTiledMap","layerInfo size.height = "+size.height+"layerInfo size.width = "+size.width);
+//		Log.i("CCTMXTiledMap","layerInfo size.height = "+size.height+"layerInfo size.width = "+size.width);
 		
 		while (iter.hasPrevious()) {
 			tileset = iter.previous();
 			for (int y=0; y < size.height; y++ ) {
 				for (int x=0; x < size.width; x++ ) {
 					int pos = (int) (x + size.width * y);
-					Log.i("CCTMXTiledMap","pos = "+pos);
 					int gid = layerInfo.tiles.get(pos);
 
 					// gid are stored in little endian.

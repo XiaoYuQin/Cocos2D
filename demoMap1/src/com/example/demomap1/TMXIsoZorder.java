@@ -45,20 +45,20 @@ public class TMXIsoZorder extends TileMapBase{
       	
 //        maps = new CCTMXTiledMap[maxMapWidth][maxMapWidth];
 //        debug("maps = new CCTMXTiledMap[3][3];");
-//        maps[0][0] = CCTMXTiledMap.tiledMap("DemoMap_1.tmx");
-//        maps[0][1] = CCTMXTiledMap.tiledMap("DemoMap_2.tmx");
-//        maps[0][2] = CCTMXTiledMap.tiledMap("DemoMap_3.tmx");
+//        maps[0][0] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        maps[0][1] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        maps[0][2] = CCTMXTiledMap.tiledMap("demoMap.tmx");
 //
-//        maps[1][0] = CCTMXTiledMap.tiledMap("DemoMap_4.tmx");
-//        maps[1][1] = CCTMXTiledMap.tiledMap("DemoMap_5.tmx");
-//        maps[1][2] = CCTMXTiledMap.tiledMap("DemoMap_6.tmx");
+//        maps[1][0] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        maps[1][1] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        maps[1][2] = CCTMXTiledMap.tiledMap("demoMap.tmx");
 //        
-//        maps[2][0] = CCTMXTiledMap.tiledMap("DemoMap_7.tmx"); 
-//        maps[2][1] = CCTMXTiledMap.tiledMap("DemoMap_8.tmx");
-//        maps[2][2] = CCTMXTiledMap.tiledMap("DemoMap_9.tmx");
-        
-        
-        
+//        maps[2][0] = CCTMXTiledMap.tiledMap("demoMap.tmx"); 
+//        maps[2][1] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        maps[2][2] = CCTMXTiledMap.tiledMap("demoMap.tmx");
+//        
+//        
+//        
 //        for(int x=0;x<maxMapWidth;x++){
 //        	for(int y=0;y<maxMapWidth;y++){
 //        		
@@ -107,14 +107,14 @@ public class TMXIsoZorder extends TileMapBase{
 //          
 //           
 		debug("2222");  
-		map1 = CCTMXTiledMap.tiledMap("orthogonal-test-movelayer.tmx");   
+//		map1 = CCTMXTiledMap.tiledMap("orthogonal-test-movelayer.tmx");   
 //		map1 = CCTMXTiledMap.tiledMap("DemoMap_1.tmx");
 		
 //		map1.setScale(scale); 
 		
-		debug("CCTMXTiledMap");
-		addChild(map1, 0);
-		map1.setPositionScreenCenter(); 
+//		debug("CCTMXTiledMap");
+//		addChild(map1, 0);
+//		map1.setPositionScreenCenter(); 
 //
 //		
 //		
@@ -172,7 +172,10 @@ public class TMXIsoZorder extends TileMapBase{
 ////		debug("map9 visable = "+map9.get);
 		
 	
-		
+		CCTMXTiledMap map1 = CCTMXTiledMap.tiledMap("orthogonal-test-movelayer.tmx");
+		debug("CCTMXTiledMap");
+		addChild(map1, 0);
+		map1.setPositionScreenCenter();
       	
         debug("addChild(map, 0, kTagTileMap)");
 
